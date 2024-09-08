@@ -36,7 +36,10 @@ ConstraintManagerFlow=0
 IsVirtualBomDocumentRemoved=0
 OutputPath=
 LogFolderPath=
-ManagedProjectGUID=
+ManagedProjectGUID=012E2779-C965-4B7D-91F7-329E8FCDA399
+VaultGUID=1DD96E2B-04F2-48F7-9036-E6F6B91A0CA0
+ReleaseVaultName=Aquaphoton Academy
+ItemGUID=012E2779-C965-4B7D-91F7-329E8FCDA399
 IncludeDesignInRelease=0
 CrossRefSheetStyle=1
 CrossRefLocationStyle=1
@@ -98,7 +101,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=XJDBFDEX
 
 [Document4]
 DocumentPath=PcbLib.PcbLib
