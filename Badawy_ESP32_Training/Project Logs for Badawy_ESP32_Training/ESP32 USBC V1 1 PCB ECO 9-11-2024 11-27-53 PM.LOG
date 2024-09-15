@@ -1,0 +1,486 @@
+Added Component: Designator=C1(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C318563"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung Electro-Mechanics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "CL05A475MO5NUNC"; VariantName = "[No Variations]"
+Added Component: Designator=C2(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C3(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307413"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsug Electro-Mechanics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "CL05A105KL5NRNC"; VariantName = "[No Variations]"
+Added Component: Designator=C4(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C5(Capacitor big)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C494845"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "PANASONIC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "EEEFN1V271UP"; VariantName = "[No Variations]"
+Added Component: Designator=C6(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307413"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsug Electro-Mechanics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "CL05A105KL5NRNC"; VariantName = "[No Variations]"
+Added Component: Designator=C8(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C9(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C10(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C11(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C12(Capacitor)
+Add component (AddParameter): Name = "LCSC part number"; Value = "C307415"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsug Electro-Mechanics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "CL05A106MP8NUB8"; VariantName = "[No Variations]"
+Added Component: Designator=C13(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C14(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307413"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsug Electro-Mechanics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "CL05A105KL5NRNC"; VariantName = "[No Variations]"
+Added Component: Designator=C15(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=C16(Capacitor)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C307331"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B104KB54PNC"; VariantName = "[No Variations]"
+Added Component: Designator=D2(FUSE_AQ3045-01ETG - duplicate)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C3710326"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "AQ3045-01ETG"; VariantName = "[No Variations]"
+Added Component: Designator=D3(FUSE_AQ3045-01ETG - duplicate)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C3710326"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "AQ3045-01ETG"; VariantName = "[No Variations]"
+Added Component: Designator=D4(FUSE_AQ3045-01ETG - duplicate)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C3710326"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "AQ3045-01ETG"; VariantName = "[No Variations]"
+Added Component: Designator=D5(FUSE_AQ3045-01ETG - duplicate)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C3710326"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "AQ3045-01ETG"; VariantName = "[No Variations]"
+Added Component: Designator=D6(FUSE_AQ3045-01ETG - duplicate)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C3710326"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "AQ3045-01ETG"; VariantName = "[No Variations]"
+Added Component: Designator=D7(FUSE_AQ3045-01ETG - duplicate)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C3710326"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "AQ3045-01ETG"; VariantName = "[No Variations]"
+Added Component: Designator=D8(LED_GREEN)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C965797"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "XINGLIGHT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "XL-1608SURC-06"; VariantName = "[No Variations]"
+Added Component: Designator=D9(LED_RED)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C965799"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "XINGLIGHT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "XL-1608SURC-06"; VariantName = "[No Variations]"
+Added Component: Designator=J1(Header pin_2.54mm)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C725956"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "XKB Connection"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "X6511WV-24H-C60D30"; VariantName = "[No Variations]"
+Added Component: Designator=J2(Header pin_2.54mm)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C725956"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "XKB Connection"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "X6511WV-24H-C60D30"; VariantName = "[No Variations]"
+Added Component: Designator=J3(USB C_HC-TYPE-C-16P-01M)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C2894899"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "HCTL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "HC-TYPE-C-16P-01M"; VariantName = "[No Variations]"
+Added Component: Designator=J4(USB C_HC-TYPE-C-16P-01M)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C2894899"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "HCTL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "HC-TYPE-C-16P-01M"; VariantName = "[No Variations]"
+Added Component: Designator=J5(3 PIN_HEADERS)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C7470079"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "HanElectricity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "1271WV-3P"; VariantName = "[No Variations]"
+Added Component: Designator=L1(INDUCTOR)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C22463831"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TECHFUSE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "SL0650-220M"; VariantName = "[No Variations]"
+Added Component: Designator=R15(Resistors)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C862226"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "RT1206FRE0710KL"; VariantName = "[No Variations]"
+Added Component: Designator=R17(Resistors)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C862226"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "RT1206FRE0710KL"; VariantName = "[No Variations]"
+Added Component: Designator=R24(Resistors)
+Add component (AddParameter): Name = "LCSC Part number"; Value = "C862226"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "RT1206FRE0710KL"; VariantName = "[No Variations]"
+Added Component: Designator=R?(Resistors)
+Add component (AddParameter): Name = "LCSC Part Number"; Value = "C138289"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "AC0402JR-070RL"; VariantName = "[No Variations]"
+Added Component: Designator=U1(ESP32)
+Add component (AddParameter): Name = "LCSC Part Number"; Value = "C2980299"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Espressif Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ESP32-S3-MINI-1U-N8"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=+VCC_FTDI Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=+VCC_FTDI Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=+5V_VBUS1 Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=+3v3 Pin=C4-2
+Added Pin To Net: NetName=+5V Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=+5V Pin=C6-2
+Add Pin To Net: Unknown Pin: Pin C7-1
+Add Pin To Net: Unknown Pin: Pin C7-2
+Added Pin To Net: NetName=+3V3_FTDI Pin=C8-1
+Added Pin To Net: NetName=GND Pin=C8-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=NetC9_2 Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=+3V3_FTDI Pin=C10-2
+Added Pin To Net: NetName=GND Pin=C11-1
+Added Pin To Net: NetName=+5V Pin=C11-2
+Added Pin To Net: NetName=GND Pin=C12-1
+Added Pin To Net: NetName=+3v3 Pin=C12-2
+Added Pin To Net: NetName=GND Pin=C13-1
+Added Pin To Net: NetName=+3v3 Pin=C13-2
+Added Pin To Net: NetName=GND Pin=C14-1
+Added Pin To Net: NetName=+5V_VBUS2 Pin=C14-2
+Added Pin To Net: NetName=GND Pin=C15-1
+Added Pin To Net: NetName=BTN_GPIO0 Pin=C15-2
+Added Pin To Net: NetName=GND Pin=C16-1
+Added Pin To Net: NetName=CHIP_PU Pin=C16-2
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Added Pin To Net: NetName=GND Pin=D2-1
+Added Pin To Net: NetName=+5V_VBUS1 Pin=D2-2
+Added Pin To Net: NetName=GND Pin=D3-1
+Added Pin To Net: NetName=CONC1_USB_N Pin=D3-2
+Added Pin To Net: NetName=GND Pin=D4-1
+Added Pin To Net: NetName=CONC1_USB_P Pin=D4-2
+Added Pin To Net: NetName=GND Pin=D5-1
+Added Pin To Net: NetName=+5V_VBUS2 Pin=D5-2
+Added Pin To Net: NetName=GND Pin=D6-1
+Added Pin To Net: NetName=CONC2_USB_N Pin=D6-2
+Added Pin To Net: NetName=GND Pin=D7-1
+Added Pin To Net: NetName=CONC2_USB_P Pin=D7-2
+Added Pin To Net: NetName=GPIO2 Pin=D8-1
+Added Pin To Net: NetName=NetD8_2 Pin=D8-2
+Added Pin To Net: NetName=GND Pin=D9-1
+Added Pin To Net: NetName=NetD9_2 Pin=D9-2
+Added Pin To Net: NetName=+3v3 Pin=J1-1
+Added Pin To Net: NetName=CON_GPIO0 Pin=J1-2
+Added Pin To Net: NetName=GPIO1 Pin=J1-3
+Added Pin To Net: NetName=GPIO2 Pin=J1-4
+Added Pin To Net: NetName=GPIO3 Pin=J1-5
+Added Pin To Net: NetName=GPIO4 Pin=J1-6
+Added Pin To Net: NetName=GPIO5 Pin=J1-7
+Added Pin To Net: NetName=GPIO6 Pin=J1-8
+Added Pin To Net: NetName=GPIO7 Pin=J1-9
+Added Pin To Net: NetName=GPIO8 Pin=J1-10
+Added Pin To Net: NetName=GPIO9 Pin=J1-11
+Added Pin To Net: NetName=GPIO10 Pin=J1-12
+Added Pin To Net: NetName=GPIO11 Pin=J1-13
+Added Pin To Net: NetName=GPIO12 Pin=J1-14
+Added Pin To Net: NetName=GPIO13 Pin=J1-15
+Added Pin To Net: NetName=GPIO14 Pin=J1-16
+Added Pin To Net: NetName=GPIO15 Pin=J1-17
+Added Pin To Net: NetName=GPIO16 Pin=J1-18
+Added Pin To Net: NetName=GPIO17 Pin=J1-19
+Added Pin To Net: NetName=GPIO18 Pin=J1-20
+Added Pin To Net: NetName=+5V Pin=J1-21
+Added Pin To Net: NetName=GND Pin=J1-22
+Added Pin To Net: NetName=GND Pin=J2-1
+Added Pin To Net: NetName=CHIP_PU Pin=J2-2
+Added Pin To Net: NetName=GPIO45 Pin=J2-3
+Added Pin To Net: NetName=GPIO46 Pin=J2-4
+Added Pin To Net: NetName=U0RXD Pin=J2-5
+Added Pin To Net: NetName=U0TXD Pin=J2-6
+Added Pin To Net: NetName=GPIO42 Pin=J2-7
+Added Pin To Net: NetName=GPIO41 Pin=J2-8
+Added Pin To Net: NetName=GPIO40 Pin=J2-9
+Added Pin To Net: NetName=GPIO39 Pin=J2-10
+Added Pin To Net: NetName=GPIO38 Pin=J2-11
+Added Pin To Net: NetName=GPIO37 Pin=J2-12
+Added Pin To Net: NetName=GPIO36 Pin=J2-13
+Added Pin To Net: NetName=GPIO35 Pin=J2-14
+Added Pin To Net: NetName=GPIO34 Pin=J2-15
+Added Pin To Net: NetName=GPIO33 Pin=J2-16
+Added Pin To Net: NetName=GPIO26 Pin=J2-17
+Added Pin To Net: NetName=GPIO21 Pin=J2-18
+Added Pin To Net: NetName=CONC_ESP_USB_N Pin=J2-19
+Added Pin To Net: NetName=CONC_ESP_USB_P Pin=J2-20
+Added Pin To Net: NetName=GPIO48 Pin=J2-21
+Added Pin To Net: NetName=GPIO47 Pin=J2-22
+Add Pin To Net: Unknown Pin: Pin J3-A1B12
+Add Pin To Net: Unknown Pin: Pin J3-A4B9
+Added Pin To Net: NetName=NetJ3_A5 Pin=J3-A5
+Added Pin To Net: NetName=CONC1_USB_P Pin=J3-A6
+Added Pin To Net: NetName=CONC1_USB_N Pin=J3-A7
+Add Pin To Net: Unknown Pin: Pin J3-B1A12
+Add Pin To Net: Unknown Pin: Pin J3-B4A9
+Added Pin To Net: NetName=NetJ3_B5 Pin=J3-B5
+Added Pin To Net: NetName=CONC1_USB_P Pin=J3-B6
+Added Pin To Net: NetName=CONC1_USB_N Pin=J3-B7
+Added Pin To Net: NetName=GND Pin=J3-S1
+Added Pin To Net: NetName=GND Pin=J3-S3
+Added Pin To Net: NetName=GND Pin=J3-S4
+Add Pin To Net: Unknown Pin: Pin J4-A1B12
+Add Pin To Net: Unknown Pin: Pin J4-A4B9
+Added Pin To Net: NetName=NetJ4_A5 Pin=J4-A5
+Added Pin To Net: NetName=CONC2_USB_P Pin=J4-A6
+Added Pin To Net: NetName=CONC2_USB_N Pin=J4-A7
+Add Pin To Net: Unknown Pin: Pin J4-B1A12
+Add Pin To Net: Unknown Pin: Pin J4-B4A9
+Added Pin To Net: NetName=NetJ4_B5 Pin=J4-B5
+Added Pin To Net: NetName=CONC2_USB_P Pin=J4-B6
+Added Pin To Net: NetName=CONC2_USB_N Pin=J4-B7
+Added Pin To Net: NetName=GND Pin=J4-S1
+Added Pin To Net: NetName=GND Pin=J4-S3
+Added Pin To Net: NetName=GND Pin=J4-S4
+Added Pin To Net: NetName=+5V_VBUS1 Pin=J5-1
+Added Pin To Net: NetName=+5V Pin=J5-2
+Added Pin To Net: NetName=+5V_VBUS2 Pin=J5-3
+Add Pin To Net: Unknown Pin: Pin J6-1
+Add Pin To Net: Unknown Pin: Pin J6-2
+Added Pin To Net: NetName=NetD1_2 Pin=L1-1
+Added Pin To Net: NetName=+3v3_REG Pin=L1-2
+Add Pin To Net: Unknown Pin: Pin Q1-1
+Add Pin To Net: Unknown Pin: Pin Q1-2
+Add Pin To Net: Unknown Pin: Pin Q1-3
+Add Pin To Net: Unknown Pin: Pin Q2-1
+Add Pin To Net: Unknown Pin: Pin Q2-2
+Add Pin To Net: Unknown Pin: Pin Q2-3
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Pin To Net: Unknown Pin: Pin R3-1
+Add Pin To Net: Unknown Pin: Pin R3-2
+Add Pin To Net: Unknown Pin: Pin R4-1
+Add Pin To Net: Unknown Pin: Pin R4-2
+Add Pin To Net: Unknown Pin: Pin R5-1
+Add Pin To Net: Unknown Pin: Pin R5-2
+Add Pin To Net: Unknown Pin: Pin R6-1
+Add Pin To Net: Unknown Pin: Pin R6-2
+Add Pin To Net: Unknown Pin: Pin R7-1
+Add Pin To Net: Unknown Pin: Pin R7-2
+Add Pin To Net: Unknown Pin: Pin R8-1
+Add Pin To Net: Unknown Pin: Pin R8-2
+Add Pin To Net: Unknown Pin: Pin R9-1
+Add Pin To Net: Unknown Pin: Pin R9-2
+Add Pin To Net: Unknown Pin: Pin R10-1
+Add Pin To Net: Unknown Pin: Pin R10-2
+Add Pin To Net: Unknown Pin: Pin R11-1
+Add Pin To Net: Unknown Pin: Pin R11-2
+Add Pin To Net: Unknown Pin: Pin R12-1
+Add Pin To Net: Unknown Pin: Pin R12-2
+Add Pin To Net: Unknown Pin: Pin R13-1
+Add Pin To Net: Unknown Pin: Pin R13-2
+Add Pin To Net: Unknown Pin: Pin R14-1
+Add Pin To Net: Unknown Pin: Pin R14-2
+Added Pin To Net: NetName=NetQ1_1 Pin=R15-1
+Added Pin To Net: NetName=DTR_FTDI Pin=R15-2
+Add Pin To Net: Unknown Pin: Pin R16-1
+Add Pin To Net: Unknown Pin: Pin R16-2
+Added Pin To Net: NetName=NetQ2_1 Pin=R17-1
+Added Pin To Net: NetName=RTS_FTDI Pin=R17-2
+Add Pin To Net: Unknown Pin: Pin R18-1
+Add Pin To Net: Unknown Pin: Pin R18-2
+Add Pin To Net: Unknown Pin: Pin R19-1
+Add Pin To Net: Unknown Pin: Pin R19-2
+Add Pin To Net: Unknown Pin: Pin R20-1
+Add Pin To Net: Unknown Pin: Pin R20-2
+Add Pin To Net: Unknown Pin: Pin R21-1
+Add Pin To Net: Unknown Pin: Pin R21-2
+Add Pin To Net: Unknown Pin: Pin R22-1
+Add Pin To Net: Unknown Pin: Pin R22-2
+Add Pin To Net: Unknown Pin: Pin R23-1
+Add Pin To Net: Unknown Pin: Pin R23-2
+Added Pin To Net: NetName=CHIP_PU Pin=R24-1
+Added Pin To Net: NetName=+3v3 Pin=R24-2
+Add Pin To Net: Unknown Pin: Pin R25-1
+Add Pin To Net: Unknown Pin: Pin R25-2
+Add Pin To Net: Unknown Pin: Pin R26-1
+Add Pin To Net: Unknown Pin: Pin R26-2
+Added Pin To Net: NetName=+3v3_REG Pin=R?-2
+Add Pin To Net: Unknown Pin: Pin SW1-1
+Add Pin To Net: Unknown Pin: Pin SW1-4
+Add Pin To Net: Unknown Pin: Pin SW2-1
+Add Pin To Net: Unknown Pin: Pin SW2-4
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-2
+Added Pin To Net: NetName=+3v3 Pin=U1-3
+Added Pin To Net: NetName=NetR14_2 Pin=U1-4
+Added Pin To Net: NetName=GPIO1 Pin=U1-5
+Added Pin To Net: NetName=GPIO2 Pin=U1-6
+Added Pin To Net: NetName=GPIO3 Pin=U1-7
+Added Pin To Net: NetName=GPIO4 Pin=U1-8
+Added Pin To Net: NetName=GPIO5 Pin=U1-9
+Added Pin To Net: NetName=GPIO6 Pin=U1-10
+Added Pin To Net: NetName=GPIO7 Pin=U1-11
+Added Pin To Net: NetName=GPIO8 Pin=U1-12
+Added Pin To Net: NetName=GPIO9 Pin=U1-13
+Added Pin To Net: NetName=GPIO10 Pin=U1-14
+Added Pin To Net: NetName=GPIO11 Pin=U1-15
+Added Pin To Net: NetName=GPIO12 Pin=U1-16
+Added Pin To Net: NetName=GPIO13 Pin=U1-17
+Added Pin To Net: NetName=GPIO14 Pin=U1-18
+Added Pin To Net: NetName=GPIO15 Pin=U1-19
+Added Pin To Net: NetName=GPIO16 Pin=U1-20
+Added Pin To Net: NetName=GPIO17 Pin=U1-21
+Added Pin To Net: NetName=GPIO18 Pin=U1-22
+Added Pin To Net: NetName=ESP_USB_N Pin=U1-23
+Added Pin To Net: NetName=ESP_USB_P Pin=U1-24
+Added Pin To Net: NetName=GPIO21 Pin=U1-25
+Added Pin To Net: NetName=GPIO26 Pin=U1-26
+Added Pin To Net: NetName=GPIO47 Pin=U1-27
+Added Pin To Net: NetName=GPIO33 Pin=U1-28
+Added Pin To Net: NetName=GPIO34 Pin=U1-29
+Added Pin To Net: NetName=GPIO48 Pin=U1-30
+Added Pin To Net: NetName=GPIO35 Pin=U1-31
+Added Pin To Net: NetName=GPIO36 Pin=U1-32
+Added Pin To Net: NetName=GPIO37 Pin=U1-33
+Added Pin To Net: NetName=GPIO38 Pin=U1-34
+Added Pin To Net: NetName=GPIO39 Pin=U1-35
+Added Pin To Net: NetName=GPIO40 Pin=U1-36
+Added Pin To Net: NetName=GPIO41 Pin=U1-37
+Added Pin To Net: NetName=GPIO42 Pin=U1-38
+Added Pin To Net: NetName=U0TXD Pin=U1-39
+Added Pin To Net: NetName=U0RXD Pin=U1-40
+Added Pin To Net: NetName=GPIO45 Pin=U1-41
+Added Pin To Net: NetName=GND Pin=U1-42
+Added Pin To Net: NetName=GND Pin=U1-43
+Added Pin To Net: NetName=GPIO46 Pin=U1-44
+Added Pin To Net: NetName=CHIP_PU Pin=U1-45
+Added Pin To Net: NetName=GND Pin=U1-46
+Added Pin To Net: NetName=GND Pin=U1-47
+Added Pin To Net: NetName=GND Pin=U1-48
+Added Pin To Net: NetName=GND Pin=U1-49
+Added Pin To Net: NetName=GND Pin=U1-50
+Added Pin To Net: NetName=GND Pin=U1-51
+Added Pin To Net: NetName=GND Pin=U1-52
+Added Pin To Net: NetName=GND Pin=U1-53
+Added Pin To Net: NetName=GND Pin=U1-54
+Added Pin To Net: NetName=GND Pin=U1-55
+Added Pin To Net: NetName=GND Pin=U1-56
+Added Pin To Net: NetName=GND Pin=U1-57
+Added Pin To Net: NetName=GND Pin=U1-58
+Added Pin To Net: NetName=GND Pin=U1-59
+Added Pin To Net: NetName=GND Pin=U1-60
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-61
+Added Pin To Net: NetName=GND Pin=U1-62
+Added Pin To Net: NetName=GND Pin=U1-63
+Added Pin To Net: NetName=GND Pin=U1-64
+Added Pin To Net: NetName=GND Pin=U1-65
+Add Pin To Net: Unknown Pin: Pin U2-1
+Add Pin To Net: Unknown Pin: Pin U2-2
+Add Pin To Net: Unknown Pin: Pin U2-3
+Add Pin To Net: Unknown Pin: Pin U2-4
+Add Pin To Net: Unknown Pin: Pin U2-5
+Add Pin To Net: Unknown Pin: Pin U2-7
+Add Pin To Net: Unknown Pin: Pin U2-8
+Add Pin To Net: Unknown Pin: Pin U2-14
+Add Pin To Net: Unknown Pin: Pin U2-15
+Add Pin To Net: Unknown Pin: Pin U2-16
+Add Pin To Net: Unknown Pin: Pin U2-17
+Add Pin To Net: Unknown Pin: Pin U2-18
+Add Pin To Net: Unknown Pin: Pin U2-19
+Add Pin To Net: Unknown Pin: Pin U2-20
+Add Pin To Net: Unknown Pin: Pin U2-21
+Add Pin To Net: Unknown Pin: Pin U2-23
+Add Pin To Net: Unknown Pin: Pin U3-6
+Add Pin To Net: Unknown Pin: Pin U3-7
+Add Pin To Net: Unknown Pin: Pin U3-8
+Added Pin To Net: NetName=NetR?_1 Pin=R?-1
+Added Net: Name=NetR?_1
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C1 4.7uf, 16V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C2 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C3 1uf ,35V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C4 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C5 470uf, 35V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C6 1uf ,35V
+Add Class Member: Failed to add class member : Component C7 330uf, 35V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C8 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C9 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C10 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C11 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C12 10uf, 10V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C13 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C14 1uf ,35V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C15 100nf, 50V
+Added Member To Class: ClassName=ESP32 with USBC Member=Component C16 100nf, 50V
+Add Class Member: Failed to add class member : Component D1 RB521S30T1G
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D2 AQ3045-01ETG
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D3 AQ3045-01ETG
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D4 AQ3045-01ETG
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D5 AQ3045-01ETG
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D6 AQ3045-01ETG
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D7 AQ3045-01ETG
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D8 GREEN
+Added Member To Class: ClassName=ESP32 with USBC Member=Component D9 RED
+Added Member To Class: ClassName=ESP32 with USBC Member=Component J1 X6511WV-24H-C60D30
+Added Member To Class: ClassName=ESP32 with USBC Member=Component J2 X6511WV-24H-C60D30
+Added Member To Class: ClassName=ESP32 with USBC Member=Component J3 HC-TYPE-C-16P-01M
+Added Member To Class: ClassName=ESP32 with USBC Member=Component J4 HC-TYPE-C-16P-01M
+Added Member To Class: ClassName=ESP32 with USBC Member=Component J5 1271WV-3P
+Add Class Member: Failed to add class member : Component J6 MTP125-1102S1
+Added Member To Class: ClassName=ESP32 with USBC Member=Component L1 22uh/3A
+Add Class Member: Failed to add class member : Component Q1 SS8050-G(RANGE:120-200)
+Add Class Member: Failed to add class member : Component Q2 SS8050-G(RANGE:120-200)
+Add Class Member: Failed to add class member : Component R1 0O
+Add Class Member: Failed to add class member : Component R2 0O
+Add Class Member: Failed to add class member : Component R3 0O
+Add Class Member: Failed to add class member : Component R4 27O
+Add Class Member: Failed to add class member : Component R5 27O
+Add Class Member: Failed to add class member : Component R6 0O
+Add Class Member: Failed to add class member : Component R7 5K1
+Add Class Member: Failed to add class member : Component R8 5K1
+Add Class Member: Failed to add class member : Component R9 10KO
+Add Class Member: Failed to add class member : Component R10 4K7O
+Add Class Member: Failed to add class member : Component R11 10KO
+Add Class Member: Failed to add class member : Component R12 0O
+Add Class Member: Failed to add class member : Component R13 0O
+Add Class Member: Failed to add class member : Component R14 27O
+Added Member To Class: ClassName=ESP32 with USBC Member=Component R15 10KO
+Add Class Member: Failed to add class member : Component R16 27O
+Added Member To Class: ClassName=ESP32 with USBC Member=Component R17 10KO
+Add Class Member: Failed to add class member : Component R18 5K1
+Add Class Member: Failed to add class member : Component R19 5K1
+Add Class Member: Failed to add class member : Component R20 0O
+Add Class Member: Failed to add class member : Component R21 0O
+Add Class Member: Failed to add class member : Component R22 0O
+Add Class Member: Failed to add class member : Component R23 0O
+Added Member To Class: ClassName=ESP32 with USBC Member=Component R24 10KO
+Add Class Member: Failed to add class member : Component R25 1KO
+Add Class Member: Failed to add class member : Component R26 1KO
+Added Member To Class: ClassName=ESP32 with USBC Member=Component R? 0O
+Add Class Member: Failed to add class member : Component SW1 PTS645SM43JSMTR92 LFS
+Add Class Member: Failed to add class member : Component SW2 PTS645SM43JSMTR92 LFS
+Added Member To Class: ClassName=ESP32 with USBC Member=Component U1 ESP32-S3-MINI-1U-N8
+Add Class Member: Failed to add class member : Component U2 FT232RL-REEL
+Add Class Member: Failed to add class member : Component U3 LM2594M-3.3
