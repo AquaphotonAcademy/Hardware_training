@@ -1,0 +1,10 @@
+Added Component: Designator=R20(RES_SMD_0402)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/YAGO/YAGO-S-A0008145938/YAGO-S-A0008145938-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com:443/pdfs/VipMasterIC/IC/YAGO/YAGO-S-A0008145938/YAGO-S-A0008145938-1.pdf?src-supplier=IHS+Markit"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0402JR-070RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C60485"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=U0TXD Pin=R20-1
+Added Pin To Net: NetName=RXD_FTDI Pin=R20-2
+Change Net Color : Old Net Color=Navy New Net Color=Default

@@ -36,7 +36,10 @@ ConstraintManagerFlow=0
 IsVirtualBomDocumentRemoved=1
 OutputPath=
 LogFolderPath=
-ManagedProjectGUID=
+ManagedProjectGUID=50654279-8525-486E-B114-97BBE76DF99C
+VaultGUID=1DD96E2B-04F2-48F7-9036-E6F6B91A0CA0
+ReleaseVaultName=Aquaphoton Academy
+ItemGUID=50654279-8525-486E-B114-97BBE76DF99C
 IncludeDesignInRelease=0
 CrossRefSheetStyle=1
 CrossRefLocationStyle=1
@@ -44,6 +47,7 @@ CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
+CurrentVariant=Prototype
 
 [Preferences]
 PrefsVaultGUID=
@@ -101,23 +105,6 @@ GenerateClassCluster=0
 DocumentUniqueId=KEPYTPXD
 
 [Document4]
-DocumentPath=ESP32 PCB.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=IYFQGDFJ
-
-[Document5]
 DocumentPath=ESP32 With USBC_Project.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -133,6 +120,63 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[Document5]
+DocumentPath=ESP32 PCB.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RRUWGJKE
+
+[Document6]
+DocumentPath=Job.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[ProjectVariant1]
+UniqueId=0af2fd2f-9d24-4dd1-8d9e-b6f3c2a054cb
+Description=Prototype
+AllowFabrication=0
+ParameterCount=0
+VariationCount=7
+Variation1=Designator=R27|UniqueId=\CTJGGHRS|Kind=1|AlternatePart=
+Variation2=Designator=R25|UniqueId=\BDLDFGDP|Kind=1|AlternatePart=
+Variation3=Designator=C9|UniqueId=\THMABUZL|Kind=1|AlternatePart=
+Variation4=Designator=R8|UniqueId=\JZMHQMUU|Kind=1|AlternatePart=
+Variation5=Designator=R2|UniqueId=\GGCWLPQX|Kind=1|AlternatePart=
+Variation6=Designator=R3|UniqueId=\DFOYLFKA|Kind=1|AlternatePart=
+Variation7=Designator=C14|UniqueId=\IANTARRB|Kind=1|AlternatePart=
+ParamVariationCount=0
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for ESP32 With USBC_Project\Design Rule Check - Copy of ESP32 PCB.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for ESP32 With USBC_Project\Design Rule Check - ESP32 PCB.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
