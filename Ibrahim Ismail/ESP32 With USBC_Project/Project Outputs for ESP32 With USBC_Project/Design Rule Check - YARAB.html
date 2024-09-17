@@ -1,0 +1,729 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9/17/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10:03:48 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc" class="file"><acronym title="D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc">D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">111</td></tr>
+</table>
+</td>
+</table><a name="IDEYQK3OBMYF3POF5APMRDOLSGPL53WI2U1MWB5SMELQEO3LBAUR4L"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTHJFDLVIQN0NCXB4I0KCYVY2HDCNJWD1SRWRRK0IHYR4FVTWLSG">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2MFF354IHXW4PZTIGDERMI5ZOGAAPFTRMCRFZJP34AFWNB5HC4NO">Clearance Constraint (Gap=6mil) (WithinRoom('FTDI') or WithinRoom('USB-C2')or WithinRoom('USB-C1') or WithinRoom('BUCK')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3TUUWYBE1RTLMUTJDVM2ZBGC1LVROEWH2MKWIBGUBOSW4DWRXLDM">Clearance Constraint (Gap=8mil) (InDifferentialPairClass('DIFF90')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTI2FF4F2GY3XH13PX1P1P14CBPW0VZKKDEAKNQKMCW5VZI4GFCQP">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYFM30ZSEKI1NGNUJ1WAGGN3AWCVLLGUPATOOVDBQVEOYRLAERWZM">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN4H0OJ1XQ1PDEELK1ZRLLPCOZCGQ3IM5QKJRXCCFHP1ZQRHIXOSP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPNMGQDPNFT2LDO4A2F3H4JMAKLR4FO4NFN2TY2FPAHPBT1CIWMHB">Width Constraint (Min=6mil) (Max=100mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0YVKIPVABB3RLTS5M45KON1GCBQGJBETUOGVBQGXAID0TY014YPE">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3F30OA04PDY3JGNQITVTTSUYEMMB325UFHZ0O2UMXETG3IGNMUB">Routing Layers(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYS5EN224RSDUMFO1UURSMBQSFDFRKVLNQ5UB5NVDWY1SJA3CA0C">Routing Via (MinHoleWidth=12mil) (MaxHoleWidth=12mil) (PreferredHoleWidth=12mil) (MinWidth=24mil) (MaxWidth=24mil) (PreferedWidth=24mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDALRYIQ1G3TRQJIAWTBDUFEOYMMVHD2J3VZ5SANBNLB5XVCAJIG3H">Differential Pairs Uncoupled Length using the Gap Constraints (Min=8mil) (Max=8.1mil) (Prefered=8mil)  and Width Constraints (Min=5.1mil) (Max=6.23mil) (Prefered=6.03mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIPVS0QACW2ELMSZMMUMPJ0MYXMTBFPW2Q04TYAINS3YHMMXDHWCB">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=20mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDC3C3GA1NZ00CHCMCSFPNRP1G3CKETHUVAHTQPKORQM34COT3AE3H">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDK0AKQM3OY3T3D52T5WOQ3IVXXBMZK2SAG3YLZTEL5Q4NQCFEFQYL">Pads and Vias to follow the Drill pairs settings</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRJIE0V540MPYF3VQVV0XCTBVD3L4I1TOSE5JYOZTXSLQU5XWIIE">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA5TBGKUWS5MMF01F5M2XPIGZJLPP1UHRGG2STJDJDP5IDDOSXB0M">Minimum Solder Mask Sliver (Gap=3.15mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSCM41EHDYQP1GBXR4B2HGB3ODKTCNPDPQUROXOLMUXB3L0F4WAAF">Silk To Solder Mask (Clearance=6mil) (IsPad),(All)</a></td>
+<td class="column2">40</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPTP54XTFB35SJW2DQPBQPPU35JUE54J25AMTDSFGVW2AGIVGSDRH">Silk to Silk (Clearance=6mil) (All),(All)</a></td>
+<td class="column2">63</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPFLWJRKHTN1GMO0U1ABMF0ZYWEI202GN4RVT2CB1S40D4W4E4AIK">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1WVNOH2IXGCYKJWG5NOBTBLBKBBEG5VHBHEPXOJCQOHNY424VKUB">Room BUCK (Bounding Region = (12145mil, 6406mil, 12267mil, 6521mil) (False)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWSOPIXC2YYIRHWXF2W00SJKLQFNWD2UZMM2RHIMC3PUO0ERKQRJJ">Room FTDI (Bounding Region = (12068mil, 6907mil, 12258mil, 7093mil) (False)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRFZGYTWOI2U2GYFNAULPS1XCKK3JV4SPJBYR5ZGUC5HNMMBFGOZL">Room USB-C2 (Bounding Region = (11610mil, 6258mil, 11738mil, 6541mil) (False)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4V3FNGYTYI11OOTUTF4NCZLVOOBOVJPYPPRMBEQKFWOX32FJXDD">Room USB-C1 (Bounding Region = (11616mil, 6840mil, 11720mil, 7130mil) (False)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTIYWHYFJMNXVNHJT34NSIVTUTKJGAPKFLDB2O5C5RXMSN4TNXULK">Component Clearance Constraint ( Horizontal Gap = 0mil, Vertical Gap = 0mil ) (InComponent('R22')),(InComponent('R25')) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR23S4G2WZAJ5ELCBPCQTPDHCZKPSVTYCBK3ZK3IDHPHSYQ0M0DZH">Component Clearance Constraint ( Horizontal Gap = 0mil, Vertical Gap = 0mil ) (InComponent('R2')),(InComponent('R1')) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1TYQOWUSN30GJRK4ZT5YCBCFILABFG3FYWWWWPNBR10MJ1A1UWRF">Component Clearance Constraint ( Horizontal Gap = 0mil, Vertical Gap = 0mil ) (InComponent('R24')),(InComponent('R27')) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYQUPYGYCCGXVGCBDVD4N1ZDBJSIIEPBHX4M1NJCAXKRI2PT5UEF">Component Clearance Constraint ( Horizontal Gap = 10mil, Vertical Gap = 10mil ) (All),(All) </a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDACLE40SV2040BCPGSMFDAM14RHRWZCEIWJGYAVMZSIOD1ISXJGJD">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">111</td>
+</tr>
+</table><br><a name="IDSCM41EHDYQP1GBXR4B2HGB3ODKTCNPDPQUROXOLMUXB3L0F4WAAF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=6mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11975.925mil|Location2.X=11980.925mil|Location1.Y=7062.261mil|Location2.Y=7067.261mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11975.925mil|Location2.X=11980.925mil|Location1.Y=7062.261mil|Location2.Y=7067.261mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C10-1(576.535mil,874mil) on L1 And Text "R6" (561mil,859mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11970.914mil|Location2.X=11975.914mil|Location1.Y=7047.721mil|Location2.Y=7052.721mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11970.914mil|Location2.X=11975.914mil|Location1.Y=7047.721mil|Location2.Y=7052.721mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C10-1(576.535mil,874mil) on L1 And Text "U2" (551.756mil,845.085mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11995.61mil|Location2.X=12000.61mil|Location1.Y=7068.617mil|Location2.Y=7073.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11995.61mil|Location2.X=12000.61mil|Location1.Y=7068.617mil|Location2.Y=7073.617mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C10-2(610mil,874mil) on L1 And Text "R6" (561mil,859mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11999.379mil|Location2.X=12004.379mil|Location1.Y=7047.721mil|Location2.Y=7052.721mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11999.379mil|Location2.X=12004.379mil|Location1.Y=7047.721mil|Location2.Y=7052.721mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C10-2(610mil,874mil) on L1 And Text "U2" (551.756mil,845.085mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11887.346mil|Location2.X=11892.346mil|Location1.Y=6862.657mil|Location2.Y=6867.657mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11887.346mil|Location2.X=11892.346mil|Location1.Y=6862.657mil|Location2.Y=6867.657mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C2-2(492mil,668.268mil) on L1 And Text "R10" (470.016mil,640.006mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12232.025mil|Location2.X=12237.025mil|Location1.Y=6753.038mil|Location2.Y=6758.038mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12232.025mil|Location2.X=12237.025mil|Location1.Y=6753.038mil|Location2.Y=6758.038mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C5-1(846.732mil,579mil) on L1 And Text "R2" (795mil,561mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12203.152mil|Location2.X=12208.152mil|Location1.Y=6752.721mil|Location2.Y=6757.721mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12203.152mil|Location2.X=12208.152mil|Location1.Y=6752.721mil|Location2.Y=6757.721mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C5-2(813.268mil,579mil) on L1 And Text "R1" (764mil,561mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12214.158mil|Location2.X=12219.158mil|Location1.Y=6781.823mil|Location2.Y=6786.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12214.158mil|Location2.X=12219.158mil|Location1.Y=6781.823mil|Location2.Y=6786.823mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C5-2(813.268mil,579mil) on L1 And Text "R2" (795mil,561mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12232.343mil|Location2.X=12237.343mil|Location1.Y=6844.921mil|Location2.Y=6849.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12232.343mil|Location2.X=12237.343mil|Location1.Y=6844.921mil|Location2.Y=6849.921mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C6-1(846.732mil,649.555mil) on L1 And Text "C5" (795mil,635mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12198.878mil|Location2.X=12203.878mil|Location1.Y=6822.5mil|Location2.Y=6827.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12198.878mil|Location2.X=12203.878mil|Location1.Y=6822.5mil|Location2.Y=6827.5mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad C6-2(813.268mil,649.555mil) on L1 And Text "C5" (795mil,635mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11966.056mil|Location2.X=11973.306mil|Location1.Y=6859.704mil|Location2.Y=6866.954mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11966.056mil|Location2.X=11973.306mil|Location1.Y=6859.704mil|Location2.Y=6866.954mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.394mil &lt; 6mil) Between Pad C8-1(583.268mil,678mil) on L1 And Text "R10" (470.016mil,640.006mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.394mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11760.62mil|Location2.X=11765.62mil|Location1.Y=6945.626mil|Location2.Y=6950.626mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11760.62mil|Location2.X=11765.62mil|Location1.Y=6945.626mil|Location2.Y=6950.626mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad D3-1(372.031mil,766mil) on L1 And Text "D1" (343mil,753mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11762.62mil|Location2.X=11767.62mil|Location1.Y=7012.626mil|Location2.Y=7017.626mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11762.62mil|Location2.X=11767.62mil|Location1.Y=7012.626mil|Location2.Y=7017.626mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad D4-1(372.031mil,833mil) on L1 And Text "D3" (344mil,819mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11805.473mil|Location2.X=11812.723mil|Location1.Y=7018.704mil|Location2.Y=7025.954mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11805.473mil|Location2.X=11812.723mil|Location1.Y=7018.704mil|Location2.Y=7025.954mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.906mil &lt; 6mil) Between Pad D4-2(424mil,833mil) on L1 And Text "D3" (344mil,819mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.906mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14073.046mil|Location2.X=14080.296mil|Location1.Y=7124.372mil|Location2.Y=7131.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14073.046mil|Location2.X=14080.296mil|Location1.Y=7124.372mil|Location2.Y=7131.622mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.006mil &lt; 6mil) Between Pad J1-1(2690mil,970mil) on Multi-Layer And Text "C3" (2661.677mil,895.006mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.006mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12349.358mil|Location2.X=12356.608mil|Location1.Y=7161.189mil|Location2.Y=7168.439mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12349.358mil|Location2.X=12356.608mil|Location1.Y=7161.189mil|Location2.Y=7168.439mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.753mil &lt; 6mil) Between Pad J1-18(990mil,970mil) on Multi-Layer And Text "C7" (888mil,942mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.753mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12354.5mil|Location2.X=12359.5mil|Location1.Y=7147.976mil|Location2.Y=7152.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12354.5mil|Location2.X=12359.5mil|Location1.Y=7147.976mil|Location2.Y=7152.976mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad J1-18(990mil,970mil) on Multi-Layer And Text "R3" (962mil,941mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12307.158mil|Location2.X=12312.158mil|Location1.Y=7162.823mil|Location2.Y=7167.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12307.158mil|Location2.X=12312.158mil|Location1.Y=7162.823mil|Location2.Y=7167.823mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad J1-19(890mil,970mil) on Multi-Layer And Text "C7" (888mil,942mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13979.168mil|Location2.X=13984.168mil|Location1.Y=7125.544mil|Location2.Y=7130.544mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13979.168mil|Location2.X=13984.168mil|Location1.Y=7125.544mil|Location2.Y=7130.544mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad J1-2(2590mil,970mil) on Multi-Layer And Text "C13" (2540.016mil,900.006mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12048.633mil|Location2.X=12053.633mil|Location1.Y=7153.657mil|Location2.Y=7158.657mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12048.633mil|Location2.X=12053.633mil|Location1.Y=7153.657mil|Location2.Y=7158.657mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad J1-21(690mil,970mil) on Multi-Layer And Text "C10" (558mil,931mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11962.8mil|Location2.X=11967.8mil|Location1.Y=7158.487mil|Location2.Y=7163.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11962.8mil|Location2.X=11967.8mil|Location1.Y=7158.487mil|Location2.Y=7163.487mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad J1-22(590mil,970mil) on Multi-Layer And Text "C10" (558mil,931mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11947.355mil|Location2.X=11954.605mil|Location1.Y=7156.371mil|Location2.Y=7163.621mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11947.355mil|Location2.X=11954.605mil|Location1.Y=7156.371mil|Location2.Y=7163.621mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.011mil &lt; 6mil) Between Pad J1-22(590mil,970mil) on Multi-Layer And Text "R11" (471mil,930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.011mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11863.5mil|Location2.X=11868.5mil|Location1.Y=7133.537mil|Location2.Y=7138.537mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11863.5mil|Location2.X=11868.5mil|Location1.Y=7133.537mil|Location2.Y=7138.537mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad J1-23(490mil,970mil) on Multi-Layer And Text "R11" (471mil,930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13681.375mil|Location2.X=13688.625mil|Location1.Y=7122.361mil|Location2.Y=7129.611mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13681.375mil|Location2.X=13688.625mil|Location1.Y=7122.361mil|Location2.Y=7129.611mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.998mil &lt; 6mil) Between Pad J1-5(2290mil,970mil) on Multi-Layer And Text "J1" (2266mil,891mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.998mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11987.5mil|Location2.X=11992.5mil|Location1.Y=6267.507mil|Location2.Y=6272.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11987.5mil|Location2.X=11992.5mil|Location1.Y=6267.507mil|Location2.Y=6272.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad J2-22(595mil,45mil) on Multi-Layer And Text "R12" (510.016mil,80.007mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11899.652mil|Location2.X=11906.902mil|Location1.Y=6262.183mil|Location2.Y=6269.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11899.652mil|Location2.X=11906.902mil|Location1.Y=6262.183mil|Location2.Y=6269.433mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.088mil &lt; 6mil) Between Pad J2-23(495mil,45mil) on Multi-Layer And Text "R12" (510.016mil,80.007mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.088mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11688.428mil|Location2.X=11695.678mil|Location1.Y=6534.841mil|Location2.Y=6542.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11688.428mil|Location2.X=11695.678mil|Location1.Y=6534.841mil|Location2.Y=6542.091mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.748mil &lt; 6mil) Between Pad J4-A1 B12(272.638mil,336.063mil) on L1 And Text "D2" (301.678mil,350.007mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.748mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11887.158mil|Location2.X=11892.158mil|Location1.Y=6972.823mil|Location2.Y=6977.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11887.158mil|Location2.X=11892.158mil|Location1.Y=6972.823mil|Location2.Y=6977.823mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R10-1(492mil,784.748mil) on L1 And Text "C2" (468mil,752mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11873.673mil|Location2.X=11878.673mil|Location1.Y=6939.5mil|Location2.Y=6944.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11873.673mil|Location2.X=11878.673mil|Location1.Y=6939.5mil|Location2.Y=6944.5mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R10-2(492mil,753.252mil) on L1 And Text "C2" (468mil,752mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11964.165mil|Location2.X=11969.165mil|Location1.Y=6922.5mil|Location2.Y=6927.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11964.165mil|Location2.X=11969.165mil|Location1.Y=6922.5mil|Location2.Y=6927.5mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R4-1(581.252mil,743mil) on L1 And Text "C8" (565mil,735mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12014.106mil|Location2.X=12019.106mil|Location1.Y=6922.5mil|Location2.Y=6927.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12014.106mil|Location2.X=12019.106mil|Location1.Y=6922.5mil|Location2.Y=6927.5mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R4-2(612.748mil,743mil) on L1 And Text "C8" (565mil,735mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11982.158mil|Location2.X=11987.158mil|Location1.Y=7004.327mil|Location2.Y=7009.327mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11982.158mil|Location2.X=11987.158mil|Location1.Y=7004.327mil|Location2.Y=7009.327mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R6-1(579.504mil,806mil) on L1 And Text "R4" (563mil,796mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11995.487mil|Location2.X=12000.487mil|Location1.Y=7003.493mil|Location2.Y=7008.493mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11995.487mil|Location2.X=12000.487mil|Location1.Y=7003.493mil|Location2.Y=7008.493mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R6-2(611mil,806mil) on L1 And Text "R4" (563mil,796mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12314.158mil|Location2.X=12319.158mil|Location1.Y=6873.327mil|Location2.Y=6878.327mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12314.158mil|Location2.X=12319.158mil|Location1.Y=6873.327mil|Location2.Y=6878.327mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R7-1(913.252mil,675mil) on L1 And Text "R9" (895mil,663mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12332.978mil|Location2.X=12337.978mil|Location1.Y=6851.673mil|Location2.Y=6856.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12332.978mil|Location2.X=12337.978mil|Location1.Y=6851.673mil|Location2.Y=6856.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R7-2(944.748mil,675mil) on L1 And Text "R9" (895mil,663mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12348.481mil|Location2.X=12353.481mil|Location1.Y=6800.493mil|Location2.Y=6805.493mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12348.481mil|Location2.X=12353.481mil|Location1.Y=6800.493mil|Location2.Y=6805.493mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R9-1(945mil,610mil) on L1 And Text "R8" (896mil,593mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12315.158mil|Location2.X=12320.158mil|Location1.Y=6808.327mil|Location2.Y=6813.327mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12315.158mil|Location2.X=12320.158mil|Location1.Y=6808.327mil|Location2.Y=6813.327mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad R9-2(913.504mil,610mil) on L1 And Text "R8" (896mil,593mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12600.045mil|Location2.X=12607.295mil|Location1.Y=6831.369mil|Location2.Y=6838.619mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12600.045mil|Location2.X=12607.295mil|Location1.Y=6831.369mil|Location2.Y=6838.619mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.707mil &lt; 6mil) Between Pad SW2-2(1236.614mil,636.417mil) on L1 And Text "R26" (1096.684mil,605.006mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.707mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6926.823mil|Location2.Y=6931.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6926.823mil|Location2.Y=6931.823mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad U2-14(789.764mil,741.181mil) on L1 And Text "C6" (795mil,706mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12207.494mil|Location2.X=12212.494mil|Location1.Y=6933.487mil|Location2.Y=6938.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12207.494mil|Location2.X=12212.494mil|Location1.Y=6933.487mil|Location2.Y=6938.487mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 6mil) Between Pad U2-15(809.449mil,741.181mil) on L1 And Text "C6" (795mil,706mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPTP54XTFB35SJW2DQPBQPPU35JUE54J25AMTDSFGVW2AGIVGSDRH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=6mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11709.331mil|Location2.X=11714.331mil|Location1.Y=6537.507mil|Location2.Y=6542.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11709.331mil|Location2.X=11714.331mil|Location1.Y=6537.507mil|Location2.Y=6542.507mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Arc (316.831mil,338.032mil) on Top Overlay And Text "D2" (301.678mil,350.007mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11739.499mil|Location2.X=11744.499mil|Location1.Y=6940.5mil|Location2.Y=6945.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11739.499mil|Location2.X=11744.499mil|Location1.Y=6940.5mil|Location2.Y=6945.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Area Fill (346.999mil,741.023mil) (352.999mil,790.023mil) on Top Overlay And Text "D1" (343mil,753mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11739.513mil|Location2.X=11744.513mil|Location1.Y=7006.5mil|Location2.Y=7011.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11739.513mil|Location2.X=11744.513mil|Location1.Y=7006.5mil|Location2.Y=7011.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Area Fill (347.013mil,808.001mil) (353.013mil,857.001mil) on Top Overlay And Text "D3" (344mil,819mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14071.661mil|Location2.X=14076.661mil|Location1.Y=6338.352mil|Location2.Y=6343.352mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14071.661mil|Location2.X=14076.661mil|Location1.Y=6338.352mil|Location2.Y=6343.352mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "3V3" (2710mil,255mil) on Bottom Overlay And Text "J2" (2744mil,126mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.152mil|Location2.X=11959.152mil|Location1.Y=7121.513mil|Location2.Y=7126.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.152mil|Location2.X=11959.152mil|Location1.Y=7121.513mil|Location2.Y=7126.513mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C10" (558mil,931mil) on Top Overlay And Text "R11" (471mil,930mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11860.5mil|Location2.X=11865.5mil|Location1.Y=6972.823mil|Location2.Y=6977.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11860.5mil|Location2.X=11865.5mil|Location1.Y=6972.823mil|Location2.Y=6977.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C2" (468mil,752mil) on Top Overlay And Track (468mil,732mil)(468mil,806mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11908.5mil|Location2.X=11913.5mil|Location1.Y=6939.5mil|Location2.Y=6944.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11908.5mil|Location2.X=11913.5mil|Location1.Y=6939.5mil|Location2.Y=6944.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C2" (468mil,752mil) on Top Overlay And Track (516mil,732mil)(516mil,806mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14059.717mil|Location2.X=14066.967mil|Location1.Y=7075.878mil|Location2.Y=7083.128mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14059.717mil|Location2.X=14066.967mil|Location1.Y=7075.878mil|Location2.Y=7083.128mil|Absolute=True">Silk To Silk Clearance Constraint: (5.006mil &lt; 6mil) Between Text "C3" (2661.677mil,895.006mil) on Top Overlay And Track (2659mil,884mil)(2735mil,884mil) on Top Overlay Silk Text to Silk Clearance [5.006mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6855.823mil|Location2.Y=6860.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6855.823mil|Location2.Y=6860.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C5" (795mil,635mil) on Top Overlay And Track (792mil,621.555mil)(792mil,676.555mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12207.494mil|Location2.X=12212.494mil|Location1.Y=6862.487mil|Location2.Y=6867.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12207.494mil|Location2.X=12212.494mil|Location1.Y=6862.487mil|Location2.Y=6867.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C5" (795mil,635mil) on Top Overlay And Track (792mil,676.555mil)(868mil,676.555mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12256.198mil|Location2.X=12263.448mil|Location1.Y=6861.362mil|Location2.Y=6868.612mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12256.198mil|Location2.X=12263.448mil|Location1.Y=6861.362mil|Location2.Y=6868.612mil|Absolute=True">Silk To Silk Clearance Constraint: (0.355mil &lt; 6mil) Between Text "C5" (795mil,635mil) on Top Overlay And Track (868mil,621.555mil)(868mil,676.555mil) on Top Overlay Silk Text to Silk Clearance [0.355mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6907.579mil|Location2.Y=6912.579mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6907.579mil|Location2.Y=6912.579mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C6" (795mil,706mil) on Top Overlay And Track (680.079mil,720.079mil)(860.079mil,720.079mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12252.579mil|Location2.X=12257.579mil|Location1.Y=6932.704mil|Location2.Y=6937.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12252.579mil|Location2.X=12257.579mil|Location1.Y=6932.704mil|Location2.Y=6937.704mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C6" (795mil,706mil) on Top Overlay And Track (860.079mil,720.079mil)(860.079mil,900.079mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12349.698mil|Location2.X=12356.948mil|Location1.Y=7161.698mil|Location2.Y=7168.948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12349.698mil|Location2.X=12356.948mil|Location1.Y=7161.698mil|Location2.Y=7168.948mil|Absolute=True">Silk To Silk Clearance Constraint: (1.355mil &lt; 6mil) Between Text "C7" (888mil,942mil) on Top Overlay And Text "R3" (962mil,941mil) on Top Overlay Silk Text to Silk Clearance [1.355mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11976.369mil|Location2.X=11983.619mil|Location1.Y=6964.868mil|Location2.Y=6972.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11976.369mil|Location2.X=11983.619mil|Location1.Y=6964.868mil|Location2.Y=6972.118mil|Absolute=True">Silk To Silk Clearance Constraint: (1.013mil &lt; 6mil) Between Text "C8" (565mil,735mil) on Top Overlay And Track (558.252mil,782mil)(632.252mil,782mil) on Top Overlay Silk Text to Silk Clearance [1.013mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11957.5mil|Location2.X=11962.5mil|Location1.Y=6955.823mil|Location2.Y=6960.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11957.5mil|Location2.X=11962.5mil|Location1.Y=6955.823mil|Location2.Y=6960.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C8" (565mil,735mil) on Top Overlay And Track (560mil,719mil)(560mil,767mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11984.158mil|Location2.X=11989.158mil|Location1.Y=6955.823mil|Location2.Y=6960.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11984.158mil|Location2.X=11989.158mil|Location1.Y=6955.823mil|Location2.Y=6960.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C8" (565mil,735mil) on Top Overlay And Track (560mil,767mil)(634mil,767mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12020.056mil|Location2.X=12028.112mil|Location1.Y=6964.069mil|Location2.Y=6972.054mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12020.056mil|Location2.X=12028.112mil|Location1.Y=6964.069mil|Location2.Y=6972.054mil|Absolute=True">Silk To Silk Clearance Constraint: (4.1mil &lt; 6mil) Between Text "C8" (565mil,735mil) on Top Overlay And Track (632.252mil,782mil)(632.252mil,830mil) on Top Overlay Silk Text to Silk Clearance [4.101mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12024.145mil|Location2.X=12029.145mil|Location1.Y=6955.823mil|Location2.Y=6960.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12024.145mil|Location2.X=12029.145mil|Location1.Y=6955.823mil|Location2.Y=6960.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C8" (565mil,735mil) on Top Overlay And Track (634mil,719mil)(634mil,767mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12155.823mil|Location2.X=12160.823mil|Location1.Y=6744.171mil|Location2.Y=6749.171mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12155.823mil|Location2.X=12160.823mil|Location1.Y=6744.171mil|Location2.Y=6749.171mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "C9" (696.678mil,550.006mil) on Top Overlay And Text "R1" (764mil,561mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11735.5mil|Location2.X=11740.5mil|Location1.Y=6940.5mil|Location2.Y=6945.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11735.5mil|Location2.X=11740.5mil|Location1.Y=6940.5mil|Location2.Y=6945.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "D1" (343mil,753mil) on Top Overlay And Track (341.016mil,742mil)(341.016mil,790mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11734.375mil|Location2.X=11741.625mil|Location1.Y=6933.875mil|Location2.Y=6941.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11734.375mil|Location2.X=11741.625mil|Location1.Y=6933.875mil|Location2.Y=6941.125mil|Absolute=True">Silk To Silk Clearance Constraint: (5mil &lt; 6mil) Between Text "D1" (343mil,753mil) on Top Overlay And Track (341.016mil,742mil)(445.016mil,742mil) on Top Overlay Silk Text to Silk Clearance [5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11735.5mil|Location2.X=11740.5mil|Location1.Y=6977.5mil|Location2.Y=6982.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11735.5mil|Location2.X=11740.5mil|Location1.Y=6977.5mil|Location2.Y=6982.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "D1" (343mil,753mil) on Top Overlay And Track (341.016mil,790mil)(445.016mil,790mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11760.823mil|Location2.X=11765.823mil|Location1.Y=6537.507mil|Location2.Y=6542.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11760.823mil|Location2.X=11765.823mil|Location1.Y=6537.507mil|Location2.Y=6542.507mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "D2" (301.678mil,350.007mil) on Top Overlay And Track (371mil,352mil)(371mil,400mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11760.823mil|Location2.X=11765.823mil|Location1.Y=6537.507mil|Location2.Y=6542.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11760.823mil|Location2.X=11765.823mil|Location1.Y=6537.507mil|Location2.Y=6542.507mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "D2" (301.678mil,350.007mil) on Top Overlay And Track (371mil,352mil)(475mil,352mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11736.5mil|Location2.X=11741.5mil|Location1.Y=7006.5mil|Location2.Y=7011.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11736.5mil|Location2.X=11741.5mil|Location1.Y=7006.5mil|Location2.Y=7011.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "D3" (344mil,819mil) on Top Overlay And Track (341.016mil,809mil)(341.016mil,857mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11735.375mil|Location2.X=11742.625mil|Location1.Y=7000.375mil|Location2.Y=7007.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11735.375mil|Location2.X=11742.625mil|Location1.Y=7000.375mil|Location2.Y=7007.625mil|Absolute=True">Silk To Silk Clearance Constraint: (4mil &lt; 6mil) Between Text "D3" (344mil,819mil) on Top Overlay And Track (341.016mil,809mil)(445.016mil,809mil) on Top Overlay Silk Text to Silk Clearance [4mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11736.5mil|Location2.X=11741.5mil|Location1.Y=7044.5mil|Location2.Y=7049.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11736.5mil|Location2.X=11741.5mil|Location1.Y=7044.5mil|Location2.Y=7049.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "D3" (344mil,819mil) on Top Overlay And Track (341.016mil,857mil)(445.016mil,857mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12784.71mil|Location2.X=12791.96mil|Location1.Y=6786.372mil|Location2.Y=6793.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12784.71mil|Location2.X=12791.96mil|Location1.Y=6786.372mil|Location2.Y=6793.622mil|Absolute=True">Silk To Silk Clearance Constraint: (4.006mil &lt; 6mil) Between Text "J6" (1366.678mil,555.006mil) on Top Overlay And Track (1281.89mil,605mil)(1518.11mil,605mil) on Top Overlay Silk Text to Silk Clearance [4.006mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12771.381mil|Location2.X=12778.631mil|Location1.Y=6736.089mil|Location2.Y=6743.339mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12771.381mil|Location2.X=12778.631mil|Location1.Y=6736.089mil|Location2.Y=6743.339mil|Absolute=True">Silk To Silk Clearance Constraint: (4.585mil &lt; 6mil) Between Text "J6" (1366.678mil,555.006mil) on Top Overlay And Track (1325mil,542.5mil)(1465mil,542.5mil) on Top Overlay Silk Text to Silk Clearance [4.585mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12183.158mil|Location2.X=12188.158mil|Location1.Y=6781.823mil|Location2.Y=6786.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12183.158mil|Location2.X=12188.158mil|Location1.Y=6781.823mil|Location2.Y=6786.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R1" (764mil,561mil) on Top Overlay And Text "R2" (795mil,561mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12156.5mil|Location2.X=12161.5mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12156.5mil|Location2.X=12161.5mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R1" (764mil,561mil) on Top Overlay And Track (718mil,606mil)(773mil,606mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12165.5mil|Location2.X=12170.5mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12165.5mil|Location2.X=12170.5mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R1" (764mil,561mil) on Top Overlay And Track (773mil,606mil)(773mil,682mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12183.158mil|Location2.X=12188.158mil|Location1.Y=6781.823mil|Location2.Y=6786.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12183.158mil|Location2.X=12188.158mil|Location1.Y=6781.823mil|Location2.Y=6786.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R1" (764mil,561mil) on Top Overlay And Track (792mil,551mil)(792mil,606mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12195.362mil|Location2.X=12202.612mil|Location1.Y=6742.375mil|Location2.Y=6749.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12195.362mil|Location2.X=12202.612mil|Location1.Y=6742.375mil|Location2.Y=6749.625mil|Absolute=True">Silk To Silk Clearance Constraint: (4mil &lt; 6mil) Between Text "R1" (764mil,561mil) on Top Overlay And Track (792mil,551mil)(868mil,551mil) on Top Overlay Silk Text to Silk Clearance [4mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12203.152mil|Location2.X=12208.152mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12203.152mil|Location2.X=12208.152mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R1" (764mil,561mil) on Top Overlay And Track (792mil,606mil)(868mil,606mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11862.516mil|Location2.X=11867.516mil|Location1.Y=6867.494mil|Location2.Y=6872.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11862.516mil|Location2.X=11867.516mil|Location1.Y=6867.494mil|Location2.Y=6872.494mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R10" (470.016mil,640.006mil) on Top Overlay And Track (465mil,647mil)(465mil,723mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11862.516mil|Location2.X=11867.516mil|Location1.Y=6834.5mil|Location2.Y=6839.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11862.516mil|Location2.X=11867.516mil|Location1.Y=6834.5mil|Location2.Y=6839.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R10" (470.016mil,640.006mil) on Top Overlay And Track (465mil,647mil)(520mil,647mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11909.168mil|Location2.X=11914.168mil|Location1.Y=6867.494mil|Location2.Y=6872.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11909.168mil|Location2.X=11914.168mil|Location1.Y=6867.494mil|Location2.Y=6872.494mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R10" (470.016mil,640.006mil) on Top Overlay And Track (520mil,647mil)(520mil,723mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.5mil|Location2.X=11959.5mil|Location1.Y=6867.494mil|Location2.Y=6872.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.5mil|Location2.X=11959.5mil|Location1.Y=6867.494mil|Location2.Y=6872.494mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R10" (470.016mil,640.006mil) on Top Overlay And Track (562mil,651mil)(562mil,706mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11962.484mil|Location2.X=11967.484mil|Location1.Y=6838.5mil|Location2.Y=6843.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11962.484mil|Location2.X=11967.484mil|Location1.Y=6838.5mil|Location2.Y=6843.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R10" (470.016mil,640.006mil) on Top Overlay And Track (562mil,651mil)(638mil,651mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6748.5mil|Location2.Y=6753.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6748.5mil|Location2.Y=6753.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R2" (795mil,561mil) on Top Overlay And Track (792mil,551mil)(792mil,606mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12186.375mil|Location2.X=12193.625mil|Location1.Y=6742.375mil|Location2.Y=6749.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12186.375mil|Location2.X=12193.625mil|Location1.Y=6742.375mil|Location2.Y=6749.625mil|Absolute=True">Silk To Silk Clearance Constraint: (4mil &lt; 6mil) Between Text "R2" (795mil,561mil) on Top Overlay And Track (792mil,551mil)(868mil,551mil) on Top Overlay Silk Text to Silk Clearance [4mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12187.5mil|Location2.X=12192.5mil|Location1.Y=6788.487mil|Location2.Y=6793.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R2" (795mil,561mil) on Top Overlay And Track (792mil,606mil)(868mil,606mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12256.198mil|Location2.X=12263.448mil|Location1.Y=6747.375mil|Location2.Y=6754.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12256.198mil|Location2.X=12263.448mil|Location1.Y=6747.375mil|Location2.Y=6754.625mil|Absolute=True">Silk To Silk Clearance Constraint: (0.355mil &lt; 6mil) Between Text "R2" (795mil,561mil) on Top Overlay And Track (868mil,551mil)(868mil,606mil) on Top Overlay Silk Text to Silk Clearance [0.355mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.375mil|Location2.X=11961.625mil|Location1.Y=7026.911mil|Location2.Y=7034.161mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.375mil|Location2.X=11961.625mil|Location1.Y=7026.911mil|Location2.Y=7034.161mil|Absolute=True">Silk To Silk Clearance Constraint: (3.098mil &lt; 6mil) Between Text "R4" (563mil,796mil) on Top Overlay And Text "U2" (551.756mil,845.085mil) on Top Overlay Silk Text to Silk Clearance [3.098mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.375mil|Location2.X=11961.625mil|Location1.Y=7027.868mil|Location2.Y=7035.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11954.375mil|Location2.X=11961.625mil|Location1.Y=7027.868mil|Location2.Y=7035.118mil|Absolute=True">Silk To Silk Clearance Constraint: (5.013mil &lt; 6mil) Between Text "R4" (563mil,796mil) on Top Overlay And Track (555.268mil,847mil)(631.268mil,847mil) on Top Overlay Silk Text to Silk Clearance [5.013mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11955.5mil|Location2.X=11960.5mil|Location1.Y=6983.5mil|Location2.Y=6988.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11955.5mil|Location2.X=11960.5mil|Location1.Y=6983.5mil|Location2.Y=6988.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R4" (563mil,796mil) on Top Overlay And Track (558.252mil,782mil)(558.252mil,830mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11955.5mil|Location2.X=11960.5mil|Location1.Y=7017.5mil|Location2.Y=7022.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11955.5mil|Location2.X=11960.5mil|Location1.Y=7017.5mil|Location2.Y=7022.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R4" (563mil,796mil) on Top Overlay And Track (558.252mil,830mil)(632.252mil,830mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12022.145mil|Location2.X=12027.145mil|Location1.Y=7003.493mil|Location2.Y=7008.493mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12022.145mil|Location2.X=12027.145mil|Location1.Y=7003.493mil|Location2.Y=7008.493mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R4" (563mil,796mil) on Top Overlay And Track (632.252mil,782mil)(632.252mil,830mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11980.158mil|Location2.X=11985.158mil|Location1.Y=7066.493mil|Location2.Y=7071.493mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11980.158mil|Location2.X=11985.158mil|Location1.Y=7066.493mil|Location2.Y=7071.493mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R6" (561mil,859mil) on Top Overlay And Text "U2" (551.756mil,845.085mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11953.5mil|Location2.X=11958.5mil|Location1.Y=7046.5mil|Location2.Y=7051.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11953.5mil|Location2.X=11958.5mil|Location1.Y=7046.5mil|Location2.Y=7051.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R6" (561mil,859mil) on Top Overlay And Track (555.268mil,847mil)(555.268mil,902mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11953.5mil|Location2.X=11958.5mil|Location1.Y=7086.487mil|Location2.Y=7091.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11953.5mil|Location2.X=11958.5mil|Location1.Y=7086.487mil|Location2.Y=7091.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R6" (561mil,859mil) on Top Overlay And Track (555.268mil,902mil)(631.268mil,902mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12020.145mil|Location2.X=12025.145mil|Location1.Y=7086.487mil|Location2.Y=7091.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12020.145mil|Location2.X=12025.145mil|Location1.Y=7086.487mil|Location2.Y=7091.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R6" (561mil,859mil) on Top Overlay And Track (631.268mil,847mil)(631.268mil,902mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12288.5mil|Location2.X=12293.5mil|Location1.Y=6780.5mil|Location2.Y=6785.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12288.5mil|Location2.X=12293.5mil|Location1.Y=6780.5mil|Location2.Y=6785.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R8" (896mil,593mil) on Top Overlay And Track (892.252mil,586mil)(892.252mil,634mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12287.375mil|Location2.X=12294.625mil|Location1.Y=6775.875mil|Location2.Y=6783.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12287.375mil|Location2.X=12294.625mil|Location1.Y=6775.875mil|Location2.Y=6783.125mil|Absolute=True">Silk To Silk Clearance Constraint: (1mil &lt; 6mil) Between Text "R8" (896mil,593mil) on Top Overlay And Track (892.252mil,586mil)(966.252mil,586mil) on Top Overlay Silk Text to Silk Clearance [1mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12288.5mil|Location2.X=12293.5mil|Location1.Y=6820.487mil|Location2.Y=6825.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12288.5mil|Location2.X=12293.5mil|Location1.Y=6820.487mil|Location2.Y=6825.487mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R8" (896mil,593mil) on Top Overlay And Track (892.252mil,634mil)(966.252mil,634mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12355.145mil|Location2.X=12360.145mil|Location1.Y=6813.823mil|Location2.Y=6818.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12355.145mil|Location2.X=12360.145mil|Location1.Y=6813.823mil|Location2.Y=6818.823mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R8" (896mil,593mil) on Top Overlay And Track (966.252mil,586mil)(966.252mil,634mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12287.5mil|Location2.X=12292.5mil|Location1.Y=6850.5mil|Location2.Y=6855.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12287.5mil|Location2.X=12292.5mil|Location1.Y=6850.5mil|Location2.Y=6855.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R9" (895mil,663mil) on Top Overlay And Track (892mil,651mil)(892mil,699mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12287.5mil|Location2.X=12292.5mil|Location1.Y=6886.5mil|Location2.Y=6891.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12287.5mil|Location2.X=12292.5mil|Location1.Y=6886.5mil|Location2.Y=6891.5mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R9" (895mil,663mil) on Top Overlay And Track (892mil,699mil)(966mil,699mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12354.145mil|Location2.X=12359.145mil|Location1.Y=6857.164mil|Location2.Y=6862.164mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12354.145mil|Location2.X=12359.145mil|Location1.Y=6857.164mil|Location2.Y=6862.164mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "R9" (895mil,663mil) on Top Overlay And Track (966mil,651mil)(966mil,699mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11944.256mil|Location2.X=11949.256mil|Location1.Y=7072.572mil|Location2.Y=7077.572mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11944.256mil|Location2.X=11949.256mil|Location1.Y=7072.572mil|Location2.Y=7077.572mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "U2" (551.756mil,845.085mil) on Top Overlay And Track (555.268mil,847mil)(555.268mil,902mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11944.256mil|Location2.X=11949.256mil|Location1.Y=7039.25mil|Location2.Y=7044.25mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11944.256mil|Location2.X=11949.256mil|Location1.Y=7039.25mil|Location2.Y=7044.25mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 6mil) Between Text "U2" (551.756mil,845.085mil) on Top Overlay And Track (555.268mil,847mil)(631.268mil,847mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYQUPYGYCCGXVGCBDVD4N1ZDBJSIIEPBHX4M1NJCAXKRI2PT5UEF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Component Clearance Constraint ( Horizontal Gap = 10mil, Vertical Gap = 10mil ) (All),(All) </th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12207.387mil|Location2.X=12215.054mil|Location1.Y=6703.993mil|Location2.Y=6711.66mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12207.387mil|Location2.X=12215.054mil|Location1.Y=6703.993mil|Location2.Y=6711.66mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP AC0402FR-07100KL (Top 3D Body)  Standoff=0.501mil  Overall=15.068mil  (12225mil, 6697.984mil) And SMT Small Component R1-0R (797.52mil,507.984mil) on L1 </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12211.324mil|Location2.X=12218.991mil|Location1.Y=6687.589mil|Location2.Y=6695.256mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12211.324mil|Location2.X=12218.991mil|Location1.Y=6687.589mil|Location2.Y=6695.256mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP AC0402FR-07100KL (Top 3D Body)  Standoff=0.501mil  Overall=15.068mil  (12225mil, 6697.984mil) And SMT Small Component R2-0R (829.016mil,507.984mil) on L1 </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12333.775mil|Location2.X=12345.025mil|Location1.Y=6717.857mil|Location2.Y=6729.107mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12333.775mil|Location2.X=12345.025mil|Location1.Y=6717.857mil|Location2.Y=6729.107mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP AC0402FR-07100KL (Top 3D Body)  Standoff=0.501mil  Overall=15.068mil  (12325mil, 6730mil) And SMT Small Component R8-10K (930mil,540mil) on L1 </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13387.387mil|Location2.X=13395.054mil|Location1.Y=6717.009mil|Location2.Y=6724.676mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13387.387mil|Location2.X=13395.054mil|Location1.Y=6717.009mil|Location2.Y=6724.676mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP AC0402FR-07100KL (Top 3D Body)  Standoff=0mil  Overall=14.567mil  (13405mil, 6711mil) And SMT Small Component R22-0R (1978mil,521mil) on L1 </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13391.324mil|Location2.X=13398.991mil|Location1.Y=6700.605mil|Location2.Y=6708.272mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13391.324mil|Location2.X=13398.991mil|Location1.Y=6700.605mil|Location2.Y=6708.272mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP AC0402FR-07100KL (Top 3D Body)  Standoff=0mil  Overall=14.567mil  (13405mil, 6711mil) And SMT Small Component R25-0R (2009.496mil,521mil) on L1 </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13388.387mil|Location2.X=13396.054mil|Location1.Y=6647.009mil|Location2.Y=6654.676mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13388.387mil|Location2.X=13396.054mil|Location1.Y=6647.009mil|Location2.Y=6654.676mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP AC0402FR-07100KL (Top 3D Body)  Standoff=0mil  Overall=14.567mil  (13406mil, 6641mil) And SMT Small Component R24-0R (1979.252mil,451mil) on L1 </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13392.324mil|Location2.X=13399.991mil|Location1.Y=6630.605mil|Location2.Y=6638.272mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13392.324mil|Location2.X=13399.991mil|Location1.Y=6630.605mil|Location2.Y=6638.272mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP AC0402FR-07100KL (Top 3D Body)  Standoff=0mil  Overall=14.567mil  (13406mil, 6641mil) And SMT Small Component R27-0R (2010.748mil,451mil) on L1 </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13057.56mil|Location2.X=13065.227mil|Location1.Y=6831.324mil|Location2.Y=6838.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Advanced Training\Ibrahim Ismail\ESP32 With USBC_Project\tmp\YARAB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13057.56mil|Location2.X=13065.227mil|Location1.Y=6831.324mil|Location2.Y=6838.991mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 10mil) Between 3D STEP CL05A105KL5NRNC (Top 3D Body)  Standoff=-9.842mil  Overall=9.842mil  (13082.654mil, 6845mil) And SMT Small Component C14-100nF, 50V (1677mil,655mil) on L1 </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
