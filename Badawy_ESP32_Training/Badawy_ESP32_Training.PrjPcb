@@ -36,7 +36,10 @@ ConstraintManagerFlow=0
 IsVirtualBomDocumentRemoved=0
 OutputPath=
 LogFolderPath=
-ManagedProjectGUID=
+ManagedProjectGUID=4A12948B-8BFA-44E6-816F-513F543431E9
+VaultGUID=1DD96E2B-04F2-48F7-9036-E6F6B91A0CA0
+ReleaseVaultName=Aquaphoton Academy
+ItemGUID=4A12948B-8BFA-44E6-816F-513F543431E9
 IncludeDesignInRelease=0
 CrossRefSheetStyle=1
 CrossRefLocationStyle=1
@@ -116,6 +119,27 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=EFAVLCRE
+
+[Document5]
+DocumentPath=ESP32 USBC V1 1.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=UBGIJDQP
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Badawy_ESP32_Training\Design Rule Check - ESP32 USBC V1 1.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
